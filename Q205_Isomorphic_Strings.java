@@ -1,11 +1,15 @@
+/*
+ * Problem Link : https://leetcode.com/problems/isomorphic-strings/
+ * Solution Link : https://leetcode.com/problems/isomorphic-strings/solutions/2472118/very-easy-100-fully-explained-java-c-python-javascript-python3-using-hashmap/
+ *
+ * Time Complexity : O(N)
+ * Space Complexity : O(N)
+ */
+
 public class Q205_Isomorphic_Strings
 {
-    // Link : https://leetcode.com/problems/isomorphic-strings/solutions/2472118/very-easy-100-fully-explained-java-c-python-javascript-python3-using-hashmap/
-
-    // Time Compelxity : O(N)
-    // Space Complexity : O(1)
-
-    public boolean isIsomorphic(String s, String t) {
+    public boolean isIsomorphic(String s, String t)
+    {
         // Base case: for different length of two strings...
         if(s.length() != t.length())
             return false;
