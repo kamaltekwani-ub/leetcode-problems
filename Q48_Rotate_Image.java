@@ -1,14 +1,13 @@
-
-// Problem Link : https://leetcode.com/problems/rotate-image/
-// Solution Link : https://leetcode.com/problems/rotate-image/solutions/18879/ac-java-in-place-solution-with-explanation-easy-to-understand/
+/*
+ * Problem Link : https://leetcode.com/problems/rotate-image/
+ * Solution Link : https://leetcode.com/problems/rotate-image/solutions/18879/ac-java-in-place-solution-with-explanation-easy-to-understand/
+ *
+ * Time Complexity : O(N^2)
+ * Space Complexity : O(1)
+ */
 
 public class Q48_Rotate_Image
 {
-    /*
-     * Time Complexity : O(N^2)
-     * Space Complexity : O(1)
-     */
-
     public void transpose(int matrix[][])
     {
         for(int row=0 ;  row<matrix.length ; row++)

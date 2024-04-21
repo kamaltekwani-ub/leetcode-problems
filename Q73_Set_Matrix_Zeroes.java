@@ -2,7 +2,7 @@
  * Problem Link : https://leetcode.com/problems/set-matrix-zeroes/
  * Solution Link : https://leetcode.com/problems/set-matrix-zeroes/solutions/3472518/full-explanation-super-easy-constant-space/
  *
- * Time Complexity : O(N ^ 2)
+ * Time Complexity : O(M * N)
  * Space Complexity : O(1)
  */
 

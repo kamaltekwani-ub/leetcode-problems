@@ -2,7 +2,7 @@ public class Test
 {
     public static void main(String[] args)
     {
-        String s = "167. Two Sum II Input Array Is Sorted";
+        String s = "";
         s = s.replaceAll(" ", "_");
         s = s.replace(".", "");
         System.out.println("Question : |Q"+s+"|");
