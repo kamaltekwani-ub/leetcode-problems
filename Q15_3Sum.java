@@ -4,9 +4,9 @@ import java.util.List;
 
 /*
  * Problem Link : https://leetcode.com/problems/3sum/
- * Solution Link :
+ * Solution Link : https://leetcode.com/problems/3sum/solutions/3109452/c-easiest-beginner-friendly-sol-set-two-pointer-approach-o-n-2-logn-time-and-o-n-space/
  *
- * Time Complexity : O(n log n)
+ * Time Complexity : O(n^2 log n)
  * Space Complexity : O(1)
  */
 
@@ -21,7 +21,7 @@ public class Q15_3Sum
                 int left = index+1;
                 int right = nums.length-1;
 
-                int target = 0 - nums[index];
+                int target = - nums[index];
 
                 while(left < right)
                 {
