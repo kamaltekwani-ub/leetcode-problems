@@ -1,3 +1,11 @@
+/*
+ * Problem Link : https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+ * Solution Link : https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/solutions/48487/java-solution-with-binary-search/
+ *
+ * Time Complexity : O(log N)
+ * Space Complexity : O(1)
+ */
+
 public class Q153_Find_Minimum_in_Rotated_Sorted_Array
 {
     public int findMin(int[] nums)
