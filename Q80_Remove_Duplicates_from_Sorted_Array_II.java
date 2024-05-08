@@ -6,12 +6,11 @@
  * Space Complexity : O(1)
  */
 
-public class Q80_Remove_Duplicates_from_Sorted_Array_II
-{
+public class Q80_Remove_Duplicates_from_Sorted_Array_II {
     public int removeDuplicates(int[] nums) {
         int index = 0;
-        for(int i : nums){
-            if(index < 2 || i > nums[index-2])
+        for (int i : nums) {
+            if (index < 2 || i > nums[index - 2])
                 nums[index++] = i;
         }
         return index;

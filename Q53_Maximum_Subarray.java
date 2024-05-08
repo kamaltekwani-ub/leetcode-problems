@@ -7,20 +7,19 @@
  */
 
 public class Q53_Maximum_Subarray {
-    public static int maxSubArray(int[] nums)
-    {
+    public static int maxSubArray(int[] nums) {
         int result = Integer.MIN_VALUE;
         int sum = 0;
-        for(int value : nums){
+        for (int value : nums) {
             sum += value;
             result = Math.max(result, sum);
-            if(sum < 0)
+            if (sum < 0)
                 sum = 0;
         }
         return result;
     }
 
     public static void main(String[] args) {
-        System.out.println("Result - "+maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4}));
+        System.out.println("Result - " + maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
     }
 }

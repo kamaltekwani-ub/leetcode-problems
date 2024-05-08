@@ -9,16 +9,14 @@ import java.util.Map;
  * Space Complexity : O(N)
  */
 
-public class Q1512_Number_of_Good_Pairs
-{
-    public int numIdenticalPairs(int[] nums)
-    {
-        Map<Integer,Integer> map = new HashMap<>();
+public class Q1512_Number_of_Good_Pairs {
+    public int numIdenticalPairs(int[] nums) {
+        Map<Integer, Integer> map = new HashMap<>();
         int result = 0;
-        for(int index=0 ; index<nums.length ; index++){
+        for (int index = 0; index < nums.length; index++) {
             int count = map.getOrDefault(nums[index], 0);
             result += count;
-            map.put(nums[index], count+1);
+            map.put(nums[index], count + 1);
         }
         return result;
     }

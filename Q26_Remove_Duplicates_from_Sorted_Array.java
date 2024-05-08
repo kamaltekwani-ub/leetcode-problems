@@ -21,10 +21,10 @@ public class Q26_Remove_Duplicates_from_Sorted_Array {
     }
      */
 
-    public int removeDuplicates(int[] nums){
+    public int removeDuplicates(int[] nums) {
         int index = 0;
-        for(int i : nums){
-            if(index < 1 || i > nums[index-1])
+        for (int i : nums) {
+            if (index < 1 || i > nums[index - 1])
                 nums[index++] = i;
         }
         return index;

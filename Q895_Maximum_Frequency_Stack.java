@@ -8,10 +8,8 @@ import java.util.Stack;
  * Solution Link : https://leetcode.com/problems/maximum-frequency-stack/solutions/1086543/js-python-java-c-frequency-map-stack-solution-w-explanation/
  */
 
-public class Q895_Maximum_Frequency_Stack
-{
-    class FreqStack
-    {
+public class Q895_Maximum_Frequency_Stack {
+    class FreqStack {
         HashMap<Integer, Integer> fmap;
         List<Stack<Integer>> stack;
 
@@ -29,11 +27,11 @@ public class Q895_Maximum_Frequency_Stack
         }
 
         public int pop() {
-            Stack<Integer> top = stack.get(stack.size()-1);
+            Stack<Integer> top = stack.get(stack.size() - 1);
             int x = top.pop();
 
             if (top.size() == 0)
-                stack.remove(stack.size()-1);
+                stack.remove(stack.size() - 1);
 
             fmap.put(x, fmap.get(x) - 1);
             return x;

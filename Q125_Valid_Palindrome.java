@@ -6,23 +6,20 @@
  * Space Complexity : O(1)
  */
 
-public class Q125_Valid_Palindrome
-{
+public class Q125_Valid_Palindrome {
     public boolean isPalindrome(String s) {
         int left = 0;
-        int right = s.length()-1;
+        int right = s.length() - 1;
 
-        while(left < right){
-            if(Character.isLetterOrDigit(s.charAt(left)) && Character.isLetterOrDigit(s.charAt(right)))
-            {
-                if(Character.toLowerCase(s.charAt(left)) != Character.toLowerCase(s.charAt(right)))
+        while (left < right) {
+            if (Character.isLetterOrDigit(s.charAt(left)) && Character.isLetterOrDigit(s.charAt(right))) {
+                if (Character.toLowerCase(s.charAt(left)) != Character.toLowerCase(s.charAt(right)))
                     return false;
                 left++;
                 right--;
-            }
-            else if(!Character.isLetterOrDigit(s.charAt(left)))
+            } else if (!Character.isLetterOrDigit(s.charAt(left)))
                 left++;
-            else if(!Character.isLetterOrDigit(s.charAt(right)))
+            else if (!Character.isLetterOrDigit(s.charAt(right)))
                 right--;
 
         }

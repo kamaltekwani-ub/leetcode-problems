@@ -6,27 +6,23 @@
  * Space Complexity : O(1)
  */
 
-public class Q287_Find_the_Duplicate_Number
-{
-    public int findDuplicate(int[] nums)
-    {
+public class Q287_Find_the_Duplicate_Number {
+    public int findDuplicate(int[] nums) {
         int slow = 0;
         int fast = 0;
         int check = 0;
 
-        while(true)
-        {
+        while (true) {
             slow = nums[slow];
             fast = nums[nums[fast]];
-            if(slow == fast)
+            if (slow == fast)
                 break;
         }
 
-        while(true)
-        {
+        while (true) {
             slow = nums[slow];
             check = nums[check];
-            if(slow == check)
+            if (slow == check)
                 break;
         }
 

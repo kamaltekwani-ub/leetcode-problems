@@ -5,39 +5,21 @@
  * Time Complexity : O(N)
  * Space Complexity : O(1)
  */
-public class Q1721_Swapping_Nodes_in_a_Linked_List
-{
-    class ListNode
-    {
-        int val;
-        ListNode next;
-
-        ListNode(){ }
-
-        ListNode(int val){
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next){
-            this.val = val;
-            this.next = next;
-        }
-    }
-
+public class Q1721_Swapping_Nodes_in_a_Linked_List {
     public ListNode swapNodes(ListNode head, int k) {
         ListNode fast = head;
         ListNode slow = head;
         ListNode first = head, second = head;
 
         // Put fast (k-1) nodes after slow
-        for(int i = 0; i < k - 1; ++i)
+        for (int i = 0; i < k - 1; ++i)
             fast = fast.next;
 
         // Save the node for swapping
         first = fast;
 
         // Move until the end of the list
-        while(fast.next != null) {
+        while (fast.next != null) {
             slow = slow.next;
             fast = fast.next;
         }
@@ -54,5 +36,22 @@ public class Q1721_Swapping_Nodes_in_a_Linked_List
         second.val = temp;
 
         return head;
+    }
+
+    class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

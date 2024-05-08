@@ -8,21 +8,10 @@
  * Space Complexity :
  */
 
-public class Q1472_Design_Browser_History
-{
-    class BrowserHistory
-    {
-        public class Node{
-            String url;
-            Node next, prev;
-            public Node(String url) {
-                this.url = url;
-                next = null;
-                prev = null;
-            }
-        }
-
+public class Q1472_Design_Browser_History {
+    class BrowserHistory {
         Node curr;
+
         public BrowserHistory(String homepage) {
             curr = new Node(homepage);
         }
@@ -46,6 +35,17 @@ public class Q1472_Design_Browser_History
                 curr = curr.next;
             }
             return curr.url;
+        }
+
+        public class Node {
+            String url;
+            Node next, prev;
+
+            public Node(String url) {
+                this.url = url;
+                next = null;
+                prev = null;
+            }
         }
     }
 }

@@ -1,12 +1,10 @@
-public class Q58_Length_of_Last_Word
-{
+public class Q58_Length_of_Last_Word {
     // Link : https://leetcode.com/problems/length-of-last-word/solutions/370636/java-0ms-100-100-single-reverse-loop-with-explanation/
 
     // Time Complexity : O(N)
     // Space Complexity : O(1)
 
-    public int lengthOfLastWord(String s)
-    {
+    public int lengthOfLastWord(String s) {
         int length = 0;
 
         // We are looking for the last word so let's go backward

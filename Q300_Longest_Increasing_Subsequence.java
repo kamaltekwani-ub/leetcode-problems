@@ -8,13 +8,12 @@ import java.util.TreeSet;
  * Space Complexity : O(N)
  */
 
-public class Q300_Longest_Increasing_Subsequence
-{
-    public int lengthOfLIS(int[] nums){
+public class Q300_Longest_Increasing_Subsequence {
+    public int lengthOfLIS(int[] nums) {
         TreeSet<Integer> set = new TreeSet<>();
-        for(int value : nums){
+        for (int value : nums) {
             Integer higherOrEqual = set.ceiling(value);
-            if(higherOrEqual != null)
+            if (higherOrEqual != null)
                 set.remove(higherOrEqual);
             set.add(value);
         }

@@ -8,8 +8,7 @@ import java.util.*;
  * Space Complexity : O(n)
  */
 
-public class Q1086_High_Five
-{
+public class Q1086_High_Five {
     public int[][] highFive(int[][] items) {
         Map<Integer, List<Integer>> map = new HashMap<>();
         for (int index = 0; index < items.length; index++) {

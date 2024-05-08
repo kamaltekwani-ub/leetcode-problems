@@ -6,10 +6,12 @@
  * Space Complexity : O(N)
  */
 
-public class Q151_Reverse_Words_in_a_String
-{
-    public int lengthOfLastWord(String s)
-    {
+public class Q151_Reverse_Words_in_a_String {
+    public static void main(String[] args) {
+
+    }
+
+    public int lengthOfLastWord(String s) {
         int length = 0;
 
         // We are looking for the last word so let's go backward
@@ -23,9 +25,5 @@ public class Q151_Reverse_Words_in_a_String
             }
         }
         return length;
-    }
-
-    public static void main(String[] args) {
-
     }
 }

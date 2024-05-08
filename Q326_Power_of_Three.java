@@ -6,12 +6,10 @@
  * Space Complexity : O(1)
  */
 
-public class Q326_Power_of_Three
-{
-    public boolean isPowerOfThree(int n)
-    {
-        while(n >= 3){
-            if(n % 3 != 0)
+public class Q326_Power_of_Three {
+    public boolean isPowerOfThree(int n) {
+        while (n >= 3) {
+            if (n % 3 != 0)
                 return false;
             n /= 3;
         }

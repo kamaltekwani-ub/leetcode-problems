@@ -6,30 +6,12 @@
  * Space Complexity :
  */
 
-public class Q206_Reverse_Linked_List
-{
-    class ListNode
-    {
-        int val;
-        ListNode next;
-
-        ListNode(){}
-
-        ListNode(int val){
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next){
-            this.val = val;
-            this.next = next;
-        }
-    }
-
+public class Q206_Reverse_Linked_List {
     public ListNode reverseList(ListNode head) {
         ListNode previous = null;
         ListNode current = head;
 
-        while(current != null){
+        while (current != null) {
             ListNode next = current.next;
             current.next = previous;
             previous = current;
@@ -37,5 +19,22 @@ public class Q206_Reverse_Linked_List
         }
 
         return previous;
+    }
+
+    class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

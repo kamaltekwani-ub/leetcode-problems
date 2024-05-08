@@ -11,30 +11,26 @@ import java.util.Map;
  * Space Complexity : O(N)
  */
 
-public class Q2013_Detect_Squares
-{
-    class DetectSquares
-    {
-        List<int []> coordinates;
+public class Q2013_Detect_Squares {
+    class DetectSquares {
+        List<int[]> coordinates;
         Map<String, Integer> count;
 
-        public DetectSquares(){
+        public DetectSquares() {
             coordinates = new ArrayList<>();
             count = new HashMap<>();
         }
 
-        public void add(int point[]){
+        public void add(int point[]) {
             coordinates.add(point);
             String key = point[0] + "@" + point[1];
-            count.put(key, count.getOrDefault(key, 0)+1);
+            count.put(key, count.getOrDefault(key, 0) + 1);
         }
 
-        public int count(int point[])
-        {
+        public int count(int point[]) {
             int sum = 0, px = point[0], py = point[1];
 
-            for (int[] coordinate : coordinates)
-            {
+            for (int[] coordinate : coordinates) {
                 int x = coordinate[0], y = coordinate[1];
 
                 if (px == x || py == y || (Math.abs(px - x) != Math.abs(py - y)))

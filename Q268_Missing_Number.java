@@ -6,13 +6,11 @@
  * Space Complexity : O(1)
  */
 
-public class Q268_Missing_Number
-{
-    public int missingNumber(int[] nums)
-    {
+public class Q268_Missing_Number {
+    public int missingNumber(int[] nums) {
         int n = nums.length;
-        int sum = n * (n + 1)/2;
-        for(int value : nums)
+        int sum = n * (n + 1) / 2;
+        for (int value : nums)
             sum -= value;
         return sum;
     }

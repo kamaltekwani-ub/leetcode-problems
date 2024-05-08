@@ -7,25 +7,7 @@
  */
 
 public class Q24_Swap_Nodes_in_Pairs {
-    class ListNode
-    {
-        int val;
-        ListNode next;
-
-        ListNode(){ }
-
-        ListNode(int val){
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next){
-            this.val = val;
-            this.next = next;
-        }
-    }
-
-    public ListNode swapPairs(ListNode head)
-    {
+    public ListNode swapPairs(ListNode head) {
         if (head == null || head.next == null) return head;
         ListNode second = head.next;
         ListNode third = second.next;
@@ -34,5 +16,22 @@ public class Q24_Swap_Nodes_in_Pairs {
         head.next = swapPairs(third);
 
         return second;
+    }
+
+    class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

@@ -6,12 +6,10 @@
  * Space Complexity : O(1)
  */
 
-public class Q2011_Final_Value_of_Variable_After_Performing_Operations
-{
-    public int finalValueAfterOperations(String[] operations)
-    {
+public class Q2011_Final_Value_of_Variable_After_Performing_Operations {
+    public int finalValueAfterOperations(String[] operations) {
         int value = 0;
-        for(String operation : operations)
+        for (String operation : operations)
             value += operation.charAt(1) == '+' ? 1 : -1;
 
         return value;

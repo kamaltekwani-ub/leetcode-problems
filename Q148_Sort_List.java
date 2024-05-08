@@ -6,25 +6,7 @@
  * Space Complexity :
  */
 
-public class Q148_Sort_List
-{
-    class ListNode
-    {
-        int val;
-        ListNode next;
-
-        ListNode(){ }
-
-        ListNode(int val){
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next){
-            this.val = val;
-            this.next = next;
-        }
-    }
-
+public class Q148_Sort_List {
     public ListNode sortList(ListNode head) {
         if (head == null || head.next == null)
             return head;
@@ -69,5 +51,22 @@ public class Q148_Sort_List
             p.next = l2;
 
         return l.next;
+    }
+
+    class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

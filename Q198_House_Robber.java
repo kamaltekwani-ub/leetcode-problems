@@ -6,8 +6,7 @@
  * Space Complexity : O(1)
  */
 
-public class Q198_House_Robber
-{
+public class Q198_House_Robber {
     /*
      * Time Complexity : O(N)
      * Space Complexity : O(N)
@@ -27,14 +26,14 @@ public class Q198_House_Robber
     }
     */
 
-    public int rob(int[] nums){
-        if(nums.length == 1)
+    public int rob(int[] nums) {
+        if (nums.length == 1)
             return nums[0];
 
         int a = nums[0];
         int b = Math.max(nums[0], nums[1]);
 
-        for(int index=2 ; index< nums.length ; index++){
+        for (int index = 2; index < nums.length; index++) {
             int c = Math.max(b, a + nums[index]);
             a = b;
             b = c;

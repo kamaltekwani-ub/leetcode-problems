@@ -10,15 +10,13 @@ import java.util.Map;
  * Space Complexity :
  */
 
-public class Q460_LFU_Cache
-{
-    class LFUCache
-    {
-        private int capacity;
+public class Q460_LFU_Cache {
+    class LFUCache {
         int minimumFrequency;
         Map<Integer, Integer> keyValueMap;
         Map<Integer, Integer> keyFrequencyMap;
         Map<Integer, LinkedHashSet<Integer>> frequencyLRUKeyMap;
+        private int capacity;
 
         public LFUCache(int capacity) {
             this.capacity = capacity;

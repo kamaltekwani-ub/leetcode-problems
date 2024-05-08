@@ -6,34 +6,14 @@
  * Space Complexity : O(1)
  */
 
-public class Q2_Add_Two_Numbers
-{
-    class ListNode
-    {
-        int val;
-        ListNode next;
-
-        ListNode(){ }
-
-        ListNode(int val){
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next){
-            this.val = val;
-            this.next = next;
-        }
-    }
-
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2)
-    {
+public class Q2_Add_Two_Numbers {
+    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         int carry = 0;
 
         ListNode dummy = new ListNode(-1);
         ListNode current = dummy;
 
-        while(l1 != null || l2 != null)
-        {
+        while (l1 != null || l2 != null) {
             int sum = carry;
 
             sum += (l1 == null) ? 0 : l1.val;
@@ -49,9 +29,26 @@ public class Q2_Add_Two_Numbers
             l2 = l2 == null ? null : l2.next;
         }
 
-        if(carry != 0)
+        if (carry != 0)
             current.next = new ListNode(carry);
 
         return dummy.next;
+    }
+
+    class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

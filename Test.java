@@ -1,11 +1,9 @@
-public class Test
-{
-    public static void main(String[] args)
-    {
-        String s = "";
+public class Test {
+    public static void main(String[] args) {
+        String s = "57. Insert Interval";
         s = s.replaceAll(" ", "_");
         s = s.replace(".", "");
-        System.out.println("Question : |Q"+s+"|");
+        System.out.println("Question : |Q" + s + "|");
     }
 }
 

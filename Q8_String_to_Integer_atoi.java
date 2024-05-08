@@ -6,12 +6,9 @@
  * Space Complexity : O(1)
  */
 
-public class Q8_String_to_Integer_atoi
-{
-    public int myAtoi(String s)
-    {
-        if (s.equals(""))
-        {
+public class Q8_String_to_Integer_atoi {
+    public int myAtoi(String s) {
+        if (s.equals("")) {
             return 0;
         }
 
@@ -23,8 +20,7 @@ public class Q8_String_to_Integer_atoi
             i++;
         }
 
-        if (i < s.length() && (s.charAt(i) == '+' || s.charAt(i) == '-'))
-        {
+        if (i < s.length() && (s.charAt(i) == '+' || s.charAt(i) == '-')) {
             if (s.charAt(i++) == '-') {
                 sign = -1;
             }
@@ -37,7 +33,7 @@ public class Q8_String_to_Integer_atoi
             if (res > Integer.MAX_VALUE / 10 || (res == Integer.MAX_VALUE / 10 && s.charAt(i) - '0' > 7)) {
                 if (sign == -1) {
                     return Integer.MIN_VALUE;
-                }else
+                } else
                     return Integer.MAX_VALUE;
             }
 

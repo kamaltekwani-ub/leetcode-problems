@@ -1,6 +1,3 @@
-import java.util.HashSet;
-import java.util.Set;
-
 /*
  * Problem Link : https://leetcode.com/problems/happy-number/
  * Solution Link : https://leetcode.com/problems/happy-number/solutions/3767573/easy-java-solution-two-pointers-floyd-s-tortoise-and-hare-detailed-explanation
@@ -9,17 +6,14 @@ import java.util.Set;
  * Space Complexity : O(N)
  */
 
-public class Q202_Happy_Number
-{
-    public boolean isHappy(int n)
-    {
+public class Q202_Happy_Number {
+    public boolean isHappy(int n) {
         int slow = n;
         int fast = n;
 
         // while loop is not used here because initially slow and
         // fast pointer will be equal only, so the loop won't run.
-        do
-        {
+        do {
             //slow moving one step ahead and fast moving two steps ahead
 
             slow = square(slow);
@@ -38,7 +32,7 @@ public class Q202_Happy_Number
 
         int ans = 0;
 
-        while(num > 0) {
+        while (num > 0) {
             int remainder = num % 10;
             ans += remainder * remainder;
             num /= 10;

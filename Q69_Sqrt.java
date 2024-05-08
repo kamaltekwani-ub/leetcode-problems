@@ -7,17 +7,16 @@
  */
 
 public class Q69_Sqrt {
-    public int mySqrt(int x)
-    {
+    public int mySqrt(int x) {
         int left = 1;
         int right = x;
 
-        while(left <= right){
-            int mid = left + (right - left)/2;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
 
-            if((long) mid * mid > (long) x)
+            if ((long) mid * mid > (long) x)
                 right = mid - 1;
-            else if(mid * mid == x)
+            else if (mid * mid == x)
                 return mid;
             else
                 left = mid + 1;

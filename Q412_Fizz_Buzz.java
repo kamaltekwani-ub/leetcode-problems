@@ -9,21 +9,18 @@ import java.util.List;
  * Space Complexity : O(N)
  */
 
-public class Q412_Fizz_Buzz
-{
-    public List<String> fizzBuzz(int n)
-    {
+public class Q412_Fizz_Buzz {
+    public List<String> fizzBuzz(int n) {
         List<String> list = new ArrayList<String>();
 
-        for(int value=1 ;  value<=n ; value++)
-        {
+        for (int value = 1; value <= n; value++) {
             String result = String.valueOf(value);
 
-            if(value % 3 == 0 && value % 5 == 0)
+            if (value % 3 == 0 && value % 5 == 0)
                 result = "FizzBuzz";
-            else if(value % 3 == 0)
+            else if (value % 3 == 0)
                 result = "Fizz";
-            else if(value % 5 == 0)
+            else if (value % 5 == 0)
                 result = "Buzz";
 
             list.add(result);

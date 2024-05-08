@@ -6,32 +6,12 @@
  * Space Complexity : O(1)
  */
 
-public class Q234_Palindrome_Linked_List
-{
-    class ListNode
-    {
-        int val;
-        ListNode next;
-
-        ListNode(){ }
-
-        ListNode(int val){
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next){
-            this.val = val;
-            this.next = next;
-        }
-    }
-
-    public ListNode reverse(ListNode node)
-    {
+public class Q234_Palindrome_Linked_List {
+    public ListNode reverse(ListNode node) {
         ListNode current = node;
         ListNode previous = null;
 
-        while(current != null)
-        {
+        while (current != null) {
             ListNode next = current.next;
             current.next = previous;
             previous = current;
@@ -40,16 +20,14 @@ public class Q234_Palindrome_Linked_List
         return previous;
     }
 
-    public boolean isPalindrome(ListNode head)
-    {
-        if(head == null)
+    public boolean isPalindrome(ListNode head) {
+        if (head == null)
             return true;
 
         ListNode slow = head;
         ListNode fast = head;
 
-        while(fast != null && fast.next != null)
-        {
+        while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
@@ -57,14 +35,30 @@ public class Q234_Palindrome_Linked_List
         ListNode first = head;
         ListNode second = reverse(slow);
 
-        while(first != null && second != null)
-        {
-            if(first.val != second.val)
+        while (first != null && second != null) {
+            if (first.val != second.val)
                 return false;
             first = first.next;
             second = second.next;
         }
 
         return true;
+    }
+
+    class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

@@ -9,14 +9,12 @@ import java.util.Map;
  * Space Complexity : O(N)
  */
 
-public class Q1_Two_Sum
-{
-    public int[] twoSum(int[] nums, int target)
-    {
-        Map<Integer,Integer> map = new HashMap<>();
-        for(int index=0 ; index<nums.length ; index++){
+public class Q1_Two_Sum {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int index = 0; index < nums.length; index++) {
             int remainder = target - nums[index];
-            if(map.containsKey(remainder))
+            if (map.containsKey(remainder))
                 return new int[]{map.get(remainder), index};
             map.put(nums[index], index);
         }

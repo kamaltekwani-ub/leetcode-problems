@@ -6,28 +6,9 @@
  * Space Complexity :
  */
 
-public class Q25_Reverse_Nodes_in_k_Group
-{
-    class ListNode
-    {
-        int val;
-        ListNode next;
-
-        ListNode(){ }
-
-        ListNode(int val){
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next){
-            this.val = val;
-            this.next = next;
-        }
-    }
-
-    public ListNode reverseKGroup(ListNode head, int k)
-    {
-        if(head == null || head.next == null)
+public class Q25_Reverse_Nodes_in_k_Group {
+    public ListNode reverseKGroup(ListNode head, int k) {
+        if (head == null || head.next == null)
             return head;
 
         ListNode previous = null;
@@ -37,18 +18,16 @@ public class Q25_Reverse_Nodes_in_k_Group
 
         int tempCount = 0;
 
-        while(tempNode != null && tempCount < k)
-        {
+        while (tempNode != null && tempCount < k) {
             tempNode = tempNode.next;
             tempCount++;
         }
 
-        if(tempCount < k)
+        if (tempCount < k)
             return head;
 
         int count = 0;
-        while(current != null && count < k)
-        {
+        while (current != null && count < k) {
             next = current.next;
             current.next = previous;
             previous = current;
@@ -56,12 +35,29 @@ public class Q25_Reverse_Nodes_in_k_Group
             count++;
         }
 
-        if(count < k)
+        if (count < k)
             return head;
 
-        if(next != null)
+        if (next != null)
             head.next = reverseKGroup(next, k);
 
         return previous;
+    }
+
+    class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

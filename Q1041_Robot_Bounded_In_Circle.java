@@ -7,25 +7,21 @@
  */
 
 
-public class Q1041_Robot_Bounded_In_Circle
-{
-    public boolean isRobotBounded(String instructions)
-    {
-        int directions[][] = {{0,1}, {-1,0}, {0,-1}, {1,0}};
+public class Q1041_Robot_Bounded_In_Circle {
+    public boolean isRobotBounded(String instructions) {
+        int directions[][] = {{0, 1}, {-1, 0}, {0, -1}, {1, 0}};
 
         int direction = 0;
 
         int xCoordinate = 0;
         int yCoordinate = 0;
 
-        for(int index=0 ; index<instructions.length() ; index++)
-        {
-            if(instructions.charAt(index) == 'L')
+        for (int index = 0; index < instructions.length(); index++) {
+            if (instructions.charAt(index) == 'L')
                 direction = (direction + 1) % 4;
-            else if(instructions.charAt(index) == 'R')
+            else if (instructions.charAt(index) == 'R')
                 direction = (direction + 3) % 4;
-            else
-            {
+            else {
                 xCoordinate += directions[direction][0];
                 yCoordinate += directions[direction][1];
             }

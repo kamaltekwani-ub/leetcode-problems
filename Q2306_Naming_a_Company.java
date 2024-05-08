@@ -9,21 +9,19 @@ import java.util.HashSet;
  * Space Complexity : O(N)
  */
 
-public class Q2306_Naming_a_Company
-{
-    public long distinctNames(String ideas[])
-    {
+public class Q2306_Naming_a_Company {
+    public long distinctNames(String ideas[]) {
         long result = 0;
         ArrayList<String> list[] = new ArrayList[26];
 
-        for(int i=0 ; i<26 ; i++)
+        for (int i = 0; i < 26; i++)
             list[i] = new ArrayList<String>();
 
-        for(String idea : ideas)
-            list[idea.charAt(0)-'a'].add(idea.substring(1));
+        for (String idea : ideas)
+            list[idea.charAt(0) - 'a'].add(idea.substring(1));
 
-        for(int i=0 ; i<25 ; i++){
-            for(int j=i+1 ; j<26 ; j++){
+        for (int i = 0; i < 25; i++) {
+            for (int j = i + 1; j < 26; j++) {
                 HashSet<String> set = new HashSet<>();
                 set.addAll(list[i]);
                 set.addAll(list[j]);

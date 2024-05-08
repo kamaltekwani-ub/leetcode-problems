@@ -6,17 +6,16 @@
  * Space Complexity : O(1)
  */
 
-public class Q169_Majority_Element
-{
-    public int majorityElement(int[] nums){
+public class Q169_Majority_Element {
+    public int majorityElement(int[] nums) {
         int element = 0;
         int count = 0;
 
-        for(int num : nums){
-            if(count == 0)
+        for (int num : nums) {
+            if (count == 0)
                 element = num;
 
-            if(num == element)
+            if (num == element)
                 count++;
             else
                 count--;

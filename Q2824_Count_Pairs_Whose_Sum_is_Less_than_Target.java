@@ -9,8 +9,7 @@ import java.util.List;
  * Space Complexity : O(1)
  */
 
-public class Q2824_Count_Pairs_Whose_Sum_is_Less_than_Target
-{
+public class Q2824_Count_Pairs_Whose_Sum_is_Less_than_Target {
     public int countPairs(List<Integer> nums, int target) {
         int n = nums.size();
 

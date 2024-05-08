@@ -6,39 +6,43 @@
  * Space Complexity : O(N)
  */
 
-public class Q6_Zigzag_Conversion
-{
-    public static String convert(String s, int numRows)
-    {
-        int length = s.length();
-        StringBuffer[] sbArray = new StringBuffer[numRows];
+public class Q6_Zigzag_Conversion {
+    public String convert(String s, int numRows) {
+        if (numRows == 1)
+            return s;
+
+        StringBuilder sb[] = new StringBuilder[numRows];
+        for (int index = 0; index < numRows; index++)
+            sb[index] = new StringBuilder();
 
         int index = 0;
-        for(index=0 ; index<numRows ; index++)
-            sbArray[index] = new StringBuffer();
+        boolean direction = false;
+        int i = 0;
 
-        index = 0;
-
-        while(index < length){
-            // Vertically Downward
-            for(int i=0 ; i<numRows && index<length ; i++)
-                sbArray[i].append(s.charAt(index++));
-
-
-            // Vertically Upward
-            for(int i=numRows-2 ; i>0 && index<length ; i--)
-                sbArray[i].append(s.charAt(index++));
+        while (index < s.length()) {
+            // UP
+            if (direction) {
+                sb[i] = sb[i].append(s.charAt(index));
+                i--;
+                index++;
+                if (i == 0)
+                    direction = false;
+            }
+            // DOWN
+            else {
+                sb[i] = sb[i].append(s.charAt(index));
+                i++;
+                index++;
+                if (i == numRows - 1)
+                    direction = true;
+            }
         }
 
-        StringBuffer sb = new StringBuffer();
-        for(StringBuffer sbTemp : sbArray){
-            sb.append(sbTemp);
-        }
+        String result = "";
 
-        return sb.toString();
-    }
+        for (StringBuilder temp : sb)
+            result += temp;
 
-    public static void main(String[] args) {
-        System.out.println("Result - "+convert("PAYPALISHIRING", 3));
+        return result;
     }
 }

@@ -6,28 +6,22 @@
  * Space Complexity : O(1)
  */
 
-public class Q48_Rotate_Image
-{
-    public void transpose(int matrix[][])
-    {
-        for(int row=0 ;  row<matrix.length ; row++)
-            for(int column=0 ; column<row ; column++)
-            {
+public class Q48_Rotate_Image {
+    public void transpose(int matrix[][]) {
+        for (int row = 0; row < matrix.length; row++)
+            for (int column = 0; column < row; column++) {
                 int temp = matrix[row][column];
                 matrix[row][column] = matrix[column][row];
                 matrix[column][row] = temp;
             }
     }
 
-    public void reverse(int matrix[][])
-    {
-        for(int row=0 ;  row<matrix.length ; row++)
-        {
+    public void reverse(int matrix[][]) {
+        for (int row = 0; row < matrix.length; row++) {
             int left = 0;
-            int right = matrix[0].length-1;
+            int right = matrix[0].length - 1;
 
-            while(left < right)
-            {
+            while (left < right) {
                 int temp = matrix[row][left];
                 matrix[row][left] = matrix[row][right];
                 matrix[row][right] = temp;
@@ -37,8 +31,7 @@ public class Q48_Rotate_Image
         }
     }
 
-    public void rotate(int[][] matrix)
-    {
+    public void rotate(int[][] matrix) {
         transpose(matrix);
         reverse(matrix);
     }

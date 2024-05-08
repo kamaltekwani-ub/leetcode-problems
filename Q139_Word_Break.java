@@ -8,16 +8,14 @@ import java.util.List;
  * Space Complexity :
  */
 
-public class Q139_Word_Break
-{
-    public boolean wordBreak(String s, List<String> wordDict)
-    {
-        boolean dp[] = new boolean[s.length()+1];
+public class Q139_Word_Break {
+    public boolean wordBreak(String s, List<String> wordDict) {
+        boolean dp[] = new boolean[s.length() + 1];
         dp[0] = true;
 
-        for(int index=1 ; index<=s.length() ; index++){
-            for(int j=0 ; j<index ; j++){
-                if(dp[j] && wordDict.contains(s.substring(j, index))){
+        for (int index = 1; index <= s.length(); index++) {
+            for (int j = 0; j < index; j++) {
+                if (dp[j] && wordDict.contains(s.substring(j, index))) {
                     dp[index] = true;
                     break;
                 }

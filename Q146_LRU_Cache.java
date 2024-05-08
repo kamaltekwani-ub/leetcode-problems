@@ -10,23 +10,22 @@ import java.util.Map;
  */
 
 
-public class Q146_LRU_Cache
-{
-    class Node
-    {
+public class Q146_LRU_Cache {
+    class Node {
         int key;
         int val;
         Node previous;
         Node next;
 
-        Node(){}
+        Node() {
+        }
 
-        Node(int key, int val){
+        Node(int key, int val) {
             this.key = key;
             this.val = val;
         }
 
-        Node(int key, int val, Node previous, Node next){
+        Node(int key, int val, Node previous, Node next) {
             this.key = key;
             this.val = val;
             this.previous = previous;
@@ -34,8 +33,7 @@ public class Q146_LRU_Cache
         }
     }
 
-    class LRUCache
-    {
+    class LRUCache {
         Node head;
         Node tail;
         int capacity;

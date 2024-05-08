@@ -9,10 +9,8 @@ import java.util.Arrays;
  */
 
 
-public class Q2028_Find_Missing_Observations
-{
-    private int[] makeSum(int sum, int[] arr)
-    {
+public class Q2028_Find_Missing_Observations {
+    private int[] makeSum(int sum, int[] arr) {
         int currentSum = arr.length;
 
         for (int i = 0; i < arr.length; i++) {

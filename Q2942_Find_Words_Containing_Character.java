@@ -9,14 +9,12 @@ import java.util.List;
  * Space Complexity : O(1)
  */
 
-public class Q2942_Find_Words_Containing_Character
-{
-    public List<Integer> findWordsContaining(String[] words, char x)
-    {
+public class Q2942_Find_Words_Containing_Character {
+    public List<Integer> findWordsContaining(String[] words, char x) {
         List<Integer> list = new ArrayList<>();
 
-        for(int index=0 ; index<words.length ; index++)
-            if(words[index].indexOf(x) != -1)
+        for (int index = 0; index < words.length; index++)
+            if (words[index].indexOf(x) != -1)
                 list.add(index);
 
         return list;

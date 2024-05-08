@@ -5,8 +5,7 @@ import java.util.Arrays;
  * Solution Link : https://leetcode.com/problems/shuffle-the-array/solutions/1314638/java-c-simple-o-1-space-in-place-100-faster-efficient-explained/
  */
 
-public class Q1470_Shuffle_the_Array
-{
+public class Q1470_Shuffle_the_Array {
     /*
      * Time Complexity : O(N)
      * Space Complexity : O(N)
@@ -29,21 +28,20 @@ public class Q1470_Shuffle_the_Array
      * Space Complexity : O(1)
      */
 
-    public static int[] shuffle(int nums[], int n){
-        for(int index=n ; index<2*n ; index++)
-            nums[index] = nums[index] * 1024 + nums[index-n];
+    public static int[] shuffle(int nums[], int n) {
+        for (int index = n; index < 2 * n; index++)
+            nums[index] = nums[index] * 1024 + nums[index - n];
 
         int i = 0;
 
-        for(int index=n ; index<2 * n ; index++){
+        for (int index = n; index < 2 * n; index++) {
             nums[i++] = nums[index] % 1024;
             nums[i++] = nums[index] / 1024;
         }
         return nums;
     }
 
-    public static void main(String[] args)
-    {
-        System.out.println(Arrays.toString(shuffle(new int[]{2,5,1,3,4,7}, 3)));
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(shuffle(new int[]{2, 5, 1, 3, 4, 7}, 3)));
     }
 }

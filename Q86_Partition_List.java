@@ -6,25 +6,7 @@
  * Space Complexity : O(1)
  */
 
-public class Q86_Partition_List
-{
-    class ListNode
-    {
-        int val;
-        ListNode next;
-
-        ListNode(){ }
-
-        ListNode(int val){
-            this.val = val;
-        }
-
-        ListNode(int val, ListNode next){
-            this.val = val;
-            this.next = next;
-        }
-    }
-
+public class Q86_Partition_List {
     public ListNode partition(ListNode head, int x) {
         ListNode left = new ListNode(0);
         ListNode right = new ListNode(0);
@@ -32,12 +14,11 @@ public class Q86_Partition_List
         ListNode leftTail = left;
         ListNode rightTail = right;
 
-        while(head != null){
-            if(head.val < x){
+        while (head != null) {
+            if (head.val < x) {
                 leftTail.next = head;
                 leftTail = leftTail.next;
-            }
-            else{
+            } else {
                 rightTail.next = head;
                 rightTail = rightTail.next;
             }
@@ -48,5 +29,22 @@ public class Q86_Partition_List
         rightTail.next = null;
 
         return left.next;
+    }
+
+    class ListNode {
+        int val;
+        ListNode next;
+
+        ListNode() {
+        }
+
+        ListNode(int val) {
+            this.val = val;
+        }
+
+        ListNode(int val, ListNode next) {
+            this.val = val;
+            this.next = next;
+        }
     }
 }

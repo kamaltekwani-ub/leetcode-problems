@@ -6,31 +6,13 @@
  * Space Complexity : O(1)
  */
 
-public class Q138_Copy_List_with_Random_Pointer
-{
-    class Node
-    {
-        int val;
-        Node next;
-        Node random;
-
-        Node(){ }
-
-        Node(int val){
-            this.val = val;
-            this.next = null;
-            this.random = null;
-        }
-    }
-
-    public Node copyRandomList(Node head)
-    {
-        if(head == null)
+public class Q138_Copy_List_with_Random_Pointer {
+    public Node copyRandomList(Node head) {
+        if (head == null)
             return null;
 
         Node current = head;
-        while(current != null)
-        {
+        while (current != null) {
             Node next = current.next;
             current.next = new Node(current.val);
             current.next.next = next;
@@ -39,9 +21,8 @@ public class Q138_Copy_List_with_Random_Pointer
 
         current = head;
 
-        while(current != null)
-        {
-            if(current.random != null)
+        while (current != null) {
+            if (current.random != null)
                 current.next.random = current.random.next;
             current = current.next.next;
         }
@@ -50,8 +31,7 @@ public class Q138_Copy_List_with_Random_Pointer
         Node copy = head.next;
         Node temp = copy;
 
-        while(current != null && temp != null)
-        {
+        while (current != null && temp != null) {
             current.next = (current.next != null) ? current.next.next : null;
             temp.next = (temp.next != null) ? temp.next.next : null;
             current = current.next;
@@ -59,5 +39,20 @@ public class Q138_Copy_List_with_Random_Pointer
         }
 
         return copy;
+    }
+
+    class Node {
+        int val;
+        Node next;
+        Node random;
+
+        Node() {
+        }
+
+        Node(int val) {
+            this.val = val;
+            this.next = null;
+            this.random = null;
+        }
     }
 }

@@ -6,13 +6,12 @@
  * Space Complexity : O(1)
  */
 
-public class Q392_Is_Subsequence
-{
+public class Q392_Is_Subsequence {
     public boolean isSubsequence(String s, String t) {
         int index = 0;
         int i = 0;
-        for( ; index < s.length() && i < t.length() ; i++){
-            if(s.charAt(index) == t.charAt(i))
+        for (; index < s.length() && i < t.length(); i++) {
+            if (s.charAt(index) == t.charAt(i))
                 index++;
         }
         return index == s.length();

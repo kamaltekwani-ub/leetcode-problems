@@ -6,13 +6,12 @@
  * Space Complexity : O(1)
  */
 
-public class Q122_Best_Time_to_Buy_and_Sell_Stock_II
-{
-    public int maxProfit(int[] prices){
+public class Q122_Best_Time_to_Buy_and_Sell_Stock_II {
+    public int maxProfit(int[] prices) {
         int profit = 0;
-        for(int index=1 ; index<prices.length ; index++){
-            if(prices[index-1] < prices[index])
-                profit += prices[index] - prices[index-1];
+        for (int index = 1; index < prices.length; index++) {
+            if (prices[index - 1] < prices[index])
+                profit += prices[index] - prices[index - 1];
         }
         return profit;
     }

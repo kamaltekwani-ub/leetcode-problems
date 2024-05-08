@@ -9,26 +9,23 @@ import java.util.Deque;
  * Space Complexity : O(N)
  */
 
-public class Q239_Sliding_Window_Maximum
-{
-    public int[] maxSlidingWindow(int[] nums, int k)
-    {
+public class Q239_Sliding_Window_Maximum {
+    public int[] maxSlidingWindow(int[] nums, int k) {
         int result[] = new int[nums.length - k + 1];
         Deque<Integer> deQueue = new ArrayDeque<>();
 
-        int index=0;
+        int index = 0;
 
-        for(int i=0 ; i<nums.length ; i++)
-        {
-            if(!deQueue.isEmpty() && deQueue.peek() == i - k)
+        for (int i = 0; i < nums.length; i++) {
+            if (!deQueue.isEmpty() && deQueue.peek() == i - k)
                 deQueue.poll();
 
-            while(!deQueue.isEmpty() && nums[deQueue.peekLast()] < nums[i])
+            while (!deQueue.isEmpty() && nums[deQueue.peekLast()] < nums[i])
                 deQueue.pollLast();
 
             deQueue.add(i);
 
-            if(i >= k-1)
+            if (i >= k - 1)
                 result[index++] = nums[deQueue.peek()];
         }
 

@@ -6,16 +6,15 @@
  * Space Complexity : O(1)
  */
 
-public class Q45_Jump_Game_II
-{
-    public int jump(int nums[]){
+public class Q45_Jump_Game_II {
+    public int jump(int nums[]) {
         int max = 0;
         int end = 0;
         int result = 0;
 
-        for(int index=0 ; index<nums.length-1 ; index++){
-            max = Math.max(max, index+nums[index]);
-            if(index == end){
+        for (int index = 0; index < nums.length - 1; index++) {
+            max = Math.max(max, index + nums[index]);
+            if (index == end) {
                 result++;
                 end = max;
             }

@@ -6,12 +6,10 @@
  * Space Complexity : O(N)
  */
 
-public class Q205_Isomorphic_Strings
-{
-    public boolean isIsomorphic(String s, String t)
-    {
+public class Q205_Isomorphic_Strings {
+    public boolean isIsomorphic(String s, String t) {
         // Base case: for different length of two strings...
-        if(s.length() != t.length())
+        if (s.length() != t.length())
             return false;
 
         // Create two maps for s & t strings...
@@ -19,10 +17,9 @@ public class Q205_Isomorphic_Strings
         int[] map2 = new int[256];
 
         // Traverse all elements through the loop...
-        for(int idx = 0; idx < s.length(); idx++)
-        {
+        for (int idx = 0; idx < s.length(); idx++) {
             // Compare the maps, if not equal, return false...
-            if(map1[s.charAt(idx)] != map2[t.charAt(idx)])
+            if (map1[s.charAt(idx)] != map2[t.charAt(idx)])
                 return false;
             // Insert each character if string s and t into seperate map...
             map1[s.charAt(idx)] = idx + 1;

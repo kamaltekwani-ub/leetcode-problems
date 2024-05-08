@@ -1,5 +1,4 @@
-public class Q1480_Running_Sum_of_1d_Array
-{
+public class Q1480_Running_Sum_of_1d_Array {
     /*
      * Problem Link : https://leetcode.com/problems/running-sum-of-1d-array/
      * Solution Link :
@@ -8,10 +7,9 @@ public class Q1480_Running_Sum_of_1d_Array
      * Space Complexity : O(1)
      */
 
-    public int[] runningSum(int[] nums)
-    {
+    public int[] runningSum(int[] nums) {
         int sum = 0;
-        for(int index=0 ; index<nums.length ; index++){
+        for (int index = 0; index < nums.length; index++) {
             sum += nums[index];
             nums[index] = sum;
         }

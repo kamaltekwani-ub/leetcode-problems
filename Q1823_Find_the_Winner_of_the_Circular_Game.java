@@ -1,4 +1,3 @@
-
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -35,11 +34,11 @@ public class Q1823_Find_the_Winner_of_the_Circular_Game {
 
     public int findTheWinner(int n, int k) {
         Queue<Integer> queue = new LinkedList<>();
-        for(int index=1 ; index<=n ; index++)
+        for (int index = 1; index <= n; index++)
             queue.add(index);
 
-        while(queue.size() != 1){
-            for(int index=1 ; index<=k-1 ; index++)
+        while (queue.size() != 1) {
+            for (int index = 1; index <= k - 1; index++)
                 queue.add(queue.poll());
             queue.poll();
         }

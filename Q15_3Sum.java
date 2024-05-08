@@ -10,35 +10,31 @@ import java.util.List;
  * Space Complexity : O(1)
  */
 
-public class Q15_3Sum
-{
+public class Q15_3Sum {
     public List<List<Integer>> threeSum(int[] nums) {
         Arrays.sort(nums);
         List<List<Integer>> result = new ArrayList<List<Integer>>();
 
-        for(int index=0 ; index<nums.length ; index++){
-            if(index == 0 || nums[index-1] != nums[index]){
-                int left = index+1;
-                int right = nums.length-1;
+        for (int index = 0; index < nums.length; index++) {
+            if (index == 0 || nums[index - 1] != nums[index]) {
+                int left = index + 1;
+                int right = nums.length - 1;
 
-                int target = - nums[index];
+                int target = -nums[index];
 
-                while(left < right)
-                {
-                    if(nums[left] + nums[right] == target)
-                    {
+                while (left < right) {
+                    if (nums[left] + nums[right] == target) {
                         result.add(Arrays.asList(nums[index], nums[left], nums[right]));
 
-                        while(left < right && nums[left] == nums[left+1])
+                        while (left < right && nums[left] == nums[left + 1])
                             left++;
 
-                        while(left < right && nums[right] == nums[right-1])
+                        while (left < right && nums[right] == nums[right - 1])
                             right--;
 
                         left++;
                         right--;
-                    }
-                    else if(nums[left] + nums[right] < target)
+                    } else if (nums[left] + nums[right] < target)
                         left++;
                     else
                         right--;

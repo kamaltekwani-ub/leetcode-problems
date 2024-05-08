@@ -1,10 +1,8 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Q118_Pascals_Triangle
-{
-    public List<List<Integer>> generate(int numRows)
-    {
+public class Q118_Pascals_Triangle {
+    public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> allrows = new ArrayList<>();
         ArrayList<Integer> row = new ArrayList<Integer>();
         for (int i = 0; i < numRows; i++) {
