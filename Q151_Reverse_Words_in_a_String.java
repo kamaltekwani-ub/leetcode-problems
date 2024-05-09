@@ -7,10 +7,6 @@
  */
 
 public class Q151_Reverse_Words_in_a_String {
-    public static void main(String[] args) {
-
-    }
-
     public int lengthOfLastWord(String s) {
         int length = 0;
 

@@ -9,28 +9,25 @@ import java.util.List;
  * Space Complexity : O(1)
  */
 
-public class Q57_Insert_Interval
-{
-    public int[][] insert(int[][] intervals, int[] newInterval)
-    {
-        List<int []> list = new ArrayList<>();
+public class Q57_Insert_Interval {
+    public int[][] insert(int[][] intervals, int[] newInterval) {
+        List<int[]> list = new ArrayList<>();
 
-        int index=0;
+        int index = 0;
 
-        while(index<intervals.length && intervals[index][1] < newInterval[0])
+        while (index < intervals.length && intervals[index][1] < newInterval[0])
             list.add(intervals[index++]);
 
-        while(index<intervals.length && intervals[index][0] <= newInterval[1])
-        {
+        while (index < intervals.length && intervals[index][0] <= newInterval[1]) {
             newInterval = new int[]{Math.min(intervals[index][0], newInterval[0]), Math.max(intervals[index][1], newInterval[1])};
             index++;
         }
 
         list.add(newInterval);
 
-        while(index<intervals.length)
+        while (index < intervals.length)
             list.add(intervals[index++]);
 
-        return  list.toArray(new int[0][]);
+        return list.toArray(new int[0][]);
     }
 }

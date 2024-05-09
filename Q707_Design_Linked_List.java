@@ -13,6 +13,7 @@ public class Q707_Design_Linked_List {
         private Node head;
         private Node tail;
         private int size;
+
         /**
          * Initialize your data structure here.
          */
