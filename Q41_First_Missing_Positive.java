@@ -7,30 +7,7 @@
  */
 
 public class Q41_First_Missing_Positive {
-    public int firstMissingPositive(int[] nums) {
-        int index = 0;
-
-        for (index = 0; index < nums.length; index++) {
-            while (nums[index] > 0 && nums[index] <= nums.length && nums[nums[index] - 1] != nums[index])
-                swap(nums, nums[index] - 1, index);
-        }
-
-        for (int i = 0; i < nums.length; i++) {
-            if (nums[i] != i + 1)
-                return i + 1;
-        }
-
-        return nums.length + 1;
-    }
-
-    private void swap(int[] nums, int i, int j) {
-        int temp = nums[i];
-        nums[i] = nums[j];
-        nums[j] = temp;
-    }
-}
-
-/*
+    /*
 
 Algorithm :
 
@@ -54,3 +31,27 @@ in its correct position, it swaps the number with the element at its correct pos
 function defined earlier.
 
  */
+    public int firstMissingPositive(int[] nums) {
+        int index = 0;
+
+        for (index = 0; index < nums.length; index++) {
+            while (nums[index] > 0 && nums[index] <= nums.length && nums[nums[index] - 1] != nums[index])
+                swap(nums, nums[index] - 1, index);
+        }
+
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != i + 1)
+                return i + 1;
+        }
+
+        return nums.length + 1;
+    }
+
+    private void swap(int[] nums, int i, int j) {
+        int temp = nums[i];
+        nums[i] = nums[j];
+        nums[j] = temp;
+    }
+}
+
+
