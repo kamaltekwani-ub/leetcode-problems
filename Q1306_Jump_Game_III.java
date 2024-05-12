@@ -1,6 +1,3 @@
-import java.util.LinkedList;
-import java.util.Queue;
-
 /*
  * Problem Link : https://leetcode.com/problems/jump-game-iii/
  * Solution Link : https://www.youtube.com/watch?v=7Cz91Uj0VCU
@@ -8,8 +5,7 @@ import java.util.Queue;
  * Time Complexity : O(N)
  * Space Complexity : O(N)
  */
-public class Q1306_Jump_Game_III
-{
+public class Q1306_Jump_Game_III {
     // BFS Solution
 
     /*
@@ -52,11 +48,11 @@ public class Q1306_Jump_Game_III
 
     // DFS Solution
 
-    public boolean canReach(int[] arr, int start){
-        if(start < 0 || start >= arr.length || arr[start]<0)
+    public boolean canReach(int[] arr, int start) {
+        if (start < 0 || start >= arr.length || arr[start] < 0)
             return false;
 
-        if(arr[start] == 0)
+        if (arr[start] == 0)
             return true;
 
         arr[start] = -arr[start];
@@ -64,7 +60,7 @@ public class Q1306_Jump_Game_III
         boolean a = canReach(arr, start - arr[start]);
         boolean b = canReach(arr, start + arr[start]);
 
-        arr[start] = - arr[start];
+        arr[start] = -arr[start];
 
         return a || b;
     }
