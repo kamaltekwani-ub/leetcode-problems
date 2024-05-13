@@ -10,10 +10,9 @@
 import java.util.Arrays;
 
 public class Q1498_Number_of_Subsequences_That_Satisfy_the_Given_Sum_Condition {
-    public int numSubseq(int[] nums, int target)
-    {
+    public int numSubseq(int[] nums, int target) {
         int left = 0;
-        int right = nums.length-1;
+        int right = nums.length - 1;
         int count = 0;
 
         Arrays.sort(nums);
@@ -23,17 +22,14 @@ public class Q1498_Number_of_Subsequences_That_Satisfy_the_Given_Sum_Condition {
         int mod = 1_000_000_007;
 
         power[0] = 1;
-        for(int index=1 ; index<nums.length ; index++)
-            power[index] = (2 * power[index-1]) % mod;
+        for (int index = 1; index < nums.length; index++)
+            power[index] = (2 * power[index - 1]) % mod;
 
-        while(left <= right)
-        {
-            if(nums[left] + nums[right] <= target)
-            {
+        while (left <= right) {
+            if (nums[left] + nums[right] <= target) {
                 count = (count + power[right - left]) % mod;
                 left++;
-            }
-            else
+            } else
                 right--;
         }
 

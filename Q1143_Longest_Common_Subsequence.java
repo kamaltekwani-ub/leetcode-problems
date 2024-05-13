@@ -6,8 +6,7 @@
  * Space Complexity : O(M * N)
  */
 
-public class Q1143_Longest_Common_Subsequence
-{
+public class Q1143_Longest_Common_Subsequence {
     public int longestCommonSubsequence(String text1, String text2) {
         int m = text1.length();
         int n = text2.length();

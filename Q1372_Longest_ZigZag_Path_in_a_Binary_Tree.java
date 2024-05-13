@@ -5,51 +5,48 @@
  *
  * Time Complexity :
  * Space Complexity :
-*/
+ */
 
-public class Q1372_Longest_ZigZag_Path_in_a_Binary_Tree
-{
-    class TreeNode{
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(){}
-
-        TreeNode(int val){ this.val = val; }
-
-        TreeNode(int val, TreeNode left, TreeNode right){
-            this.val = val;
-            this.left = left.left;
-            this.right = right;
-        }
-    }
-
+public class Q1372_Longest_ZigZag_Path_in_a_Binary_Tree {
     int length = 0;
 
-    public void findlongestZigZagPath(TreeNode root, boolean direction, int currentLength)
-    {
-        if(root == null)
+    public void findlongestZigZagPath(TreeNode root, boolean direction, int currentLength) {
+        if (root == null)
             return;
 
         length = Math.max(length, currentLength);
 
-        if(direction)
-        {
+        if (direction) {
             findlongestZigZagPath(root.left, false, currentLength + 1);
             findlongestZigZagPath(root.right, true, 1);
-        }
-        else
-        {
+        } else {
             findlongestZigZagPath(root.right, true, currentLength + 1);
             findlongestZigZagPath(root.left, false, 1);
         }
     }
 
-    public int longestZigZag(TreeNode root)
-    {
+    public int longestZigZag(TreeNode root) {
         findlongestZigZagPath(root, false, 0);
         findlongestZigZagPath(root, true, 0);
         return length;
+    }
+
+    class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+
+        TreeNode() {
+        }
+
+        TreeNode(int val) {
+            this.val = val;
+        }
+
+        TreeNode(int val, TreeNode left, TreeNode right) {
+            this.val = val;
+            this.left = left.left;
+            this.right = right;
+        }
     }
 }

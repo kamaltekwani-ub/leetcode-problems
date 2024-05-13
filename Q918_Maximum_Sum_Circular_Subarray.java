@@ -6,10 +6,8 @@
  * Space Complexity : O(1)
  */
 
-public class Q918_Maximum_Sum_Circular_Subarray
-{
-    public int maxSubarraySumCircular(int[] nums)
-    {
+public class Q918_Maximum_Sum_Circular_Subarray {
+    public int maxSubarraySumCircular(int[] nums) {
         int maxSum = nums[0];
         int currentMax = 0;
 
@@ -18,8 +16,7 @@ public class Q918_Maximum_Sum_Circular_Subarray
 
         int totalSum = 0;
 
-        for(int value : nums)
-        {
+        for (int value : nums) {
             currentMax = Math.max(currentMax + value, value);
             maxSum = Math.max(maxSum, currentMax);
 
